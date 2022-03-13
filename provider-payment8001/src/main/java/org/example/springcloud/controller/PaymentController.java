@@ -14,11 +14,12 @@ import javax.annotation.Resource;
  */
 @RestController
 @Slf4j
+@RequestMapping("/payment")
 public class PaymentController {
     @Resource
     private PaymentService paymentService;
 
-    @PostMapping("/payment/create")
+    @PostMapping("/provider/create")
     public CommonResult create(@RequestBody Payment payment) {
         int resultCode = paymentService.create(payment);
         log.info("****插入结果：" + resultCode);
@@ -30,7 +31,7 @@ public class PaymentController {
         }
     }
 
-    @GetMapping("/payment/get/{id}")
+    @GetMapping("/provider/get/{id}")
     public CommonResult getPaymentById(@PathVariable("id") Long id) {
         Payment payment = paymentService.getPaymentById(id);
         log.info("****查询结果为：" + payment);
