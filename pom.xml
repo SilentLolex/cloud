@@ -9,8 +9,9 @@
   <version>1.0-SNAPSHOT</version>
   <modules>
     <module>provider-payment8001</module>
-      <module>consumer-payment80</module>
+    <module>consumer-payment80</module>
     <module>api-common</module>
+    <module>eureka-server7001</module>
   </modules>
   <packaging>pom</packaging>
 
