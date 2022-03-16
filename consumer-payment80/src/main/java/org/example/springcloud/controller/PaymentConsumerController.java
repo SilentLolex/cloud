@@ -2,6 +2,7 @@ package org.example.springcloud.controller;
 
 import org.example.springcloud.entities.CommonResult;
 import org.example.springcloud.entities.Payment;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
@@ -16,10 +17,11 @@ import javax.annotation.Resource;
 @RequestMapping("/payment")
 public class PaymentConsumerController {
 
-    private final String GET_URL = "http://localhost:8001/payment/provider/get/";
-    private final String POST_URL = "http://localhost:8001/payment/provider/create";
+    private final String GET_URL = "http://PAYMENT-PROVIDER-SERVICE/payment/provider/get/";
+    private final String POST_URL = "http://PAYMENT-PROVIDER-SERVICE/payment/provider/create";
 
     @Resource
+
     private RestTemplate restTemplate;
 
     @GetMapping("/consumer/get/{id}")
