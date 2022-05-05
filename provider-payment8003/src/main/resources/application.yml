@@ -1,0 +1,18 @@
+server:
+  port: 8003
+spring:
+  application:
+    name: providerZk
+
+  cloud:
+    zookeeper:
+      connect-string: 192.168.33.33:2181
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cloud
+    user: root
+    password: Abc1234%
+mybatis:
+  mapper-locations: classpath*:org/example/springcloud/dao/xml/*Mapper.xml
+  type-aliases-package: org.example.springcloud.bean, org.example.springcloud.entities

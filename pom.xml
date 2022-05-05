@@ -14,6 +14,7 @@
     <module>eureka-server7001</module>
       <module>eureka-server7002</module>
       <module>provider-payment8002</module>
+    <module>provider-payment8003</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -107,6 +108,22 @@
         </configuration>
       </plugin>
     </plugins>
+    <resources>
+      <resource>
+        <directory>src/main/java</directory>
+        <includes>
+          <include>**/*Mapper.xml</include>
+        </includes>
+        <filtering>false</filtering>
+      </resource>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+        <includes>
+          <include>application.yml</include>
+        </includes>
+      </resource>
+    </resources>
   </build><!---->
 
 
